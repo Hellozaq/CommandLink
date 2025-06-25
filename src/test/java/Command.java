@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -28,7 +29,7 @@ public class Command {
         System.out.println("Opened Company Menu");
 
         Thread.sleep(3000);
-        WebDriverWait waitForCarries = new WebDriverWait(driver, 45);
+        WebDriverWait waitForCarries = new WebDriverWait(driver, Duration.ofSeconds(45));
         WebElement careers = waitForCarries.until(ExpectedConditions.elementToBeClickable(By.xpath("/html[1]/body[1]/div[4]/header[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[2]/div[2]/div[1]/div[3]/a[1]/div[1]")));
         careers.click();
         System.out.println("Opened Careers Page");
